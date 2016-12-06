@@ -1,0 +1,17 @@
+<div class="row">
+  <form action="rentals/new" method="post">
+    <div class="input-field col s12 m6 l3">
+      <select class="icons">
+        <option value="" disabled selected>Clique para escolher</option>
+        <optgroup label="Laika">
+          <option value="" data-icon="images/lada-laika-01.jpg" class="circle"> Laika 01</option>
+          <option value="" data-icon="images/lada-laika-02.jpeg" class="circle">Laika 02</option>
+        </optgroup>
+        <optgroup label="Niva">
+          <option value="" data-icon="images/lada-niva-01.jpg" class="circle">Niva 01</option>
+          <option value="" data-icon="images/lada-niva-02.jpg" class="circle">Niva 02</option>
+        </optgroup>
+      </select>
+    </div>
+  </form>
+</div>

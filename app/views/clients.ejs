@@ -8,79 +8,96 @@
   <main>
     <h5 class="center-align">Clientes</h5>
     <div class="divider"></div>
-    <div class="container">
-      <div class="row">
-        <form  action="clients" method="post">
-          <div class="input-field col s6 m3 l2">
-            <input type="text" name="cpf" id="cpf" autofocus="true" required>
-            <label for="cpf">CPF</label>
-          </div>
-          <div class="input-field col s6 m3 l2">
-            <button type="submit" id="submit" class="btn btn-small waves-effect orange darken-3">Buscar</button>
-          </div>
-        </form>
-      </div>
-      <div class="divider hide-on-med-and-down"></div>
-      <div class="row">
-        <form id="form_client" action="clients/new" method="post">
-          <input type="hidden" name="cpf">
+    <div class="row">
+      <div class="col s12 m6 l6 hoverable">
+        <fieldset>
           <div class="row">
-            <div class="input-field col s12 m8 l6 offset-l1">
-              <input autocomplete="off" id="name" type="text" name="name" disabled>
-              <label for="name">Nome</label>
-            </div>
-            <div class="input-field col s12 m4 l3">
-              <input autocomplete="off" id="chn" type="text" name="chn" disabled>
-              <label for="cnh">CNH</label>
-            </div>
+            <form  action="clients" method="post">
+              <div class="input-field col s12 m6 l6">
+                <input type="text" name="cpf" id="cpf" autofocus="true" required>
+                <label for="cpf">CPF do Cliente:</label>
+              </div>
+            </form>
           </div>
           <div class="row">
-            <div class="input-field col s12 m3 l3 offset-l1">
-              <input autocomplete="off" id="phone" type="text" name="phone" disabled>
-              <label for="phone">Telefone</label>
-            </div>
-            <div class="input-field col s12 m3 l3">
-              <input autocomplete="off" id="email" type="text" name="email" disabled>
-              <label for="email">Email</label>
-            </div>
-            <div class="input-field col s4 m2 l1">
-              <button id="form_enable" class="btn btn-small waves-effect orange darken-3" type="button">
-                Editar
-              </button>
-            </div>
-            <div class="input-field col s4 m2 l1">
-              <button id="edit_user" class="btn btn-small waves-effect orange darken-3" type="button" disabled>
-                Gravar
-              </button>
-            </div>
-            <div class="input-field col s4 m2 l1">
-              <button id="delete_user" class="btn btn-small waves-effect orange darken-3" type="button">
-                Excluir
-              </button>
-            </div>
+            <form id="clients_form">
+              <div class="input-field col s12">
+                <input type="text" name="name" value="Rodrigo Patrão Viveiros" disabled required>
+                <label for="name">Nome:</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="text" name="cnh" value="22222222222" disabled required>
+                <label for="cnh">CNH:</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="text" name="phone" value="(13)98131-6609" disabled required>
+                <label for="phone">Telefone:</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="email" name="email" value="rodrigo.viveiros@outlook.com" disabled required>
+                <label for="email">Nome:</label>
+              </div>
+              <div class="input-field col s12 m6 l6 center-align">
+                <button type="button" id="form_enable" class="btn btn-small green darken-3">Editar</button>
+                <button type="button" id="update_user" disabled class="btn btn-small orange darken-3">Gravar</button>
+                <button type="button" id="delete_user" disabled class="btn btn-small red darken-3">Excluir</button>
+              </div>
+            </form>
           </div>
-        </form>
+          <legend>Buscar Cliente</legend>
+        </fieldset>
       </div>
-    </main>
-  </div>
-  <% include partials/footer %>
-</body>
-<script src="/materialize/js/jquery-3.1.1.js"></script>
-<script src="/materialize/js/materialize.js"></script>
-<script>
-$(function(){
-  $(".button-collapse").sideNav();
-  $("#form_enable").click(function(){
-    $("input[disabled]").removeAttr("disabled");
-    $("button[disabled]").removeAttr("disabled");
-    $("#name").focus();
-  });
-  $("#cpf").focus(function(){
-    $("input").each(function(){
-      $(this).attr("disabled");
+      <div class="divider hide-on-med-and-up"></div>
+      <div class="col s12 m3 l3 hoverable">
+        <fieldset>
+          <div class="row">
+            <table>
+              <thead>
+                <tr>
+                  <td>Data</td>
+                  <td>Dias</td>
+                  <td>Valor</td>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+          <legend>Últimas locações</legend>
+        </fieldset>
+      </div>
+      <div class="divider hide-on-med-and-up"></div>
+      <div class="col s12 m3 l3 hoverable">
+        <fieldset>
+          <div class="row">
+            <p>Marca: Lada</p>
+            <p>Modelo: Niva</p>
+            <p>Placa: ABC1234</p>
+            <p>Ano: 1985</p>
+            <p>Cor: Verde</p>
+            <p>Valor para Locação: R$ 15,00<left/p>
+            </div>
+            <legend>Avtomobil utilizado</legend>
+          </fieldset>
+        </div>
+      </main>
+    </div>
+    <% include partials/footer %>
+  </body>
+  <script src="/materialize/js/jquery-3.1.1.js"></script>
+  <script src="/materialize/js/materialize.js"></script>
+  <script>
+  $(function(){
+    $(".button-collapse").sideNav();
+    $("#form_enable").click(function(){
+      $(":input[type='text']").attr('disabled', function(_, attr){ return !attr});
+      $(":input[type='email']").attr('disabled', function(_, attr){ return !attr});
+      $("#update_user").attr('disabled', function(_, attr){ return !attr});
+      $("#delete_user").attr('disabled', function(_, attr){ return !attr});
+      $("#name").focus();
     });
-    $("#edit_user").attr("disabled");
+
   });
-});
-</script>
-</html>
+  </script>
+  </html>
