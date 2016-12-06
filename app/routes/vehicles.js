@@ -2,9 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/vehicles', function(req, res){
-  var user = req.app.locals.user;
-  var date = req.app.locals.strDate;
-  var time = req.app.locals.strTime;
-  res.render('vehicles', { name: user, date: date, time: time});});
-
+  res.render('vehicles');
+});
 module.exports = router;
