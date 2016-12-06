@@ -1,0 +1,82 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+.btn-small{
+  height: 30px;
+  line-height: 32px;
+  padding: 0 0.5rem;
+  font-size: 0.75em;
+  margin-left: 10px;
+}
+.container{
+  padding: 15px;
+}
+#logo{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.input-field label {
+  color: #000;
+}
+
+/* ESTILOS PARA TROCA DA COR ORIGINAL DOS CAMPOS DE FORMULÁRIO */
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+/* label focus color */
+.input-field input[type=password]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=password].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=password].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
