@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head %>
+<body>
+  <header>
+    <% include partials/navs/navbar %>
+  </header>
+  <main>
+    <h5 class="center-align">Manutenção</h5>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12 m4 l4 hoverable">
+        <fieldset>
+          <div class="row">
+            <table class="responsive-table">
+              <thead>
+                <tr>
+                  <td>Placa</td>
+                  <td>Ano</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <legend>Selecionar Avtomobil</legend>
+        </fieldset>
+      </div>
+      <div class="divider hide-on-med-and-up"></div>
+      <div class="col s12 m4 l4 hoverable">
+        <fieldset>
+          <div class="row">
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>escolha...</option>
+                <option value="">opção1</option>
+                <option value="">opção2</option>
+                <option value="">opção3</option>
+              </select>
+            </div>
+          </div>
+          <legend>Selecionar Tipo de Manutenção</legend>
+        </fieldset>
+        <fieldset>
+          <div class="row">
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>escolha...</option>
+                <option value="">opção1</option>
+                <option value="">opção2</option>
+                <option value="">opção3</option>
+              </select>
+            </div>
+          </div>
+          <legend>Selecionar Prestador de Serviço</legend>
+        </fieldset>
+      </div>
+      <div class="divider hide-on-med-and-up"></div>
+      <div class="col s12 m4 l4 hoverable">
+        <fieldset>
+          <div class="row">
+            <form action="maintenance/new" method="post">
+              <div class="input-field col s12 m6 l6">
+                <input type="date" id="data" name="data_inicio" class="datepicker">
+                <label for="data">Data</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="text" name="valor" autocomplete="off">
+                <label for="valor">Valor do Serviço</label>
+              </div>
+              <div class="input-field col s12 m12 l12 center-align">
+                <button type="submit" class="btn btn-small waves-effect orange darken-3">Gravar</button>
+                <button type="reset" class="btn btn-small waves-effect red darken-3">Limpar</button>
+              </div>
+            </form>
+          </div>
+          <legend>Ordem de Serviço</legend>
+        </fieldset>
+      </div>
+    </main>
+  </div>
+  <% include partials/footer %>
+</body>
+<script src="/materialize/js/jquery-3.1.1.js"></script>
+<script src="/materialize/js/materialize.js"></script>
+<script>
+$(function(){
+  $(".button-collapse").sideNav();
+  $('select').material_select();
+  $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 15
+  });
+});
+</script>
+</html>

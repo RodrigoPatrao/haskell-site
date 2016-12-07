@@ -3,10 +3,7 @@ var router = express.Router();
 var bodyparser = require('body-parser');
 
 router.get('/clients', function(req, res){
-  var user = req.app.locals.user;
-  var date = req.app.locals.strDate;
-  var time = req.app.locals.strTime;
-  res.render('clients', { name: user, date: date, time: time});
+  res.render('clients');
 });
 
 router.post('/clients', function(req, res){

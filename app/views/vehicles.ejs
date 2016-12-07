@@ -95,14 +95,6 @@
 <script>
 $(function(){
   $(".button-collapse").sideNav();
-  $("#form_enable").click(function(){
-    $(":input[type='text']").attr('disabled', function(_, attr){ return !attr});
-    $(":input[type='email']").attr('disabled', function(_, attr){ return !attr});
-    $("#update_user").attr('disabled', function(_, attr){ return !attr});
-    $("#delete_user").attr('disabled', function(_, attr){ return !attr});
-    $("#name").focus();
   });
-
-});
 </script>
 </html>
