@@ -3,7 +3,7 @@
 <% include partials/head %>
 <body>
   <header>
-    <% include partials/navs/navbar %>
+    <% include partials/navbar %>
   </header>
   <main>
     <h5 class="center-align">Locações</h5>
@@ -13,7 +13,7 @@
         <fieldset>
           <form  action="clients" method="post">
             <div class="input-field">
-              <input type="text" name="cpf" id="cpf" autofocus="true" required>
+              <input placeholder="digite o CPF e tecle ENTER" type="text" name="cpf" id="cpf" autofocus="true" required>
               <label for="cpf">CPF do Cliente:</label>
             </div>
           </form>
@@ -43,12 +43,12 @@
             </select>
           </form>
           <div class="row">
-            <p class="col s12 m6 l6">Marca: Lada</p>
-            <p class="col s12 m6 l6">Modelo: Niva</p>
-            <p class="col s12 m6 l6">Placa: ABC1234</p>
-            <p class="col s12 m6 l6">Ano: 1985</p>
-            <p class="col s12 m6 l6">Cor: Verde</p>
-            <p class="col s12 m6 l6">Diária: R$ 15,00</p>
+            <p class="col s12 m6 l6">Marca:<br> Lada</p>
+            <p class="col s12 m6 l6">Modelo:<br> Niva</p>
+            <p class="col s12 m6 l6">Placa:<br> ABC1234</p>
+            <p class="col s12 m6 l6">Ano:<br> 1985</p>
+            <p class="col s12 m6 l6">Cor:<br> Verde</p>
+            <p class="col s12 m6 l6">Diária:<br> R$ 15,00</p>
           </div>
           <legend>Dados do Avtomobil</legend>
         </fieldset>
@@ -67,11 +67,11 @@
                 <label for="data_fim">Final:</label>
               </div>
               <div class="input-field col s12 m6 l6">
-                <input type="text" name="total_dias">
+                <input type="text" name="total_dias" disabled>
                 <label for="valor_total">Dias:</label>
               </div>
               <div class="input-field col s12 m6 l6">
-                <input type="text" name="valor_total">
+                <input type="text" name="valor_total" disabled>
                 <label for="valor_total">Valor Total:</label>
               </div>
               <div class="input-field col s12 center-align">

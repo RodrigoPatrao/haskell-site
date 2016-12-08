@@ -2,15 +2,15 @@ var express = require('express');
 var router = express.Router();
 var bodyparser = require('body-parser');
 
-router.get('/clients', function(req, res){
-  res.render('clients');
+router.get('/clients', function(req, res, next){
+  if (!req.app.locals.currentUser) {
+    res.render('index', { alert: true, text : req.app.locals.unauthorizedAccess  });
+  } else {
+    res.render('clients');
+  }
 });
 
-router.post('/clients', function(req, res){
-  res.send(req.body);
-});
-
-router.post('/clients/new', function(req, res){
+router.post('/clients/new', function(req, res, next){
   res.send(req.body);
 });
 

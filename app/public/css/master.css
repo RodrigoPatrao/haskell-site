@@ -6,12 +6,15 @@ body {
 main {
   flex: 1 0 auto;
 }
+fieldset {
+  margin-bottom: 10px;
+}
+
 .btn-small{
   height: 30px;
   line-height: 32px;
   padding: 0 0.5rem;
   font-size: 0.75em;
-  margin-right: 10px;
   margin-bottom: 0;
 }
 .container{
@@ -37,8 +40,15 @@ main {
 .input-field label {
   color: #000;
 }
-fieldset {
-  margin-bottom: 10px;
+.alert {
+  background-color: #ffcdd2;
+  text-align: center;
+  margin: 15px 0;
+  border: 2px solid #e57373;
+  border-radius: 7px;
+}
+.alert p {
+  color: #e57373;
 }
 
 

@@ -3,100 +3,74 @@
 <% include partials/head %>
 <body>
   <header>
-    <% include partials/navs/navbar %>
+    <% include partials/navbar %>
   </header>
   <main>
-    <h5 class="center-align">Clientes</h5>
+    <h5 class="center-align">Clientes - Lista Geral</h5>
     <div class="divider"></div>
-    <div class="row">
-      <div class="col s12 m4 l4 hoverable">
-        <fieldset>
-          <div class="row">
-            <form  action="clients" method="post">
-              <div class="input-field col s12 m6 l6">
-                <input type="text" name="cpf" id="cpf" autofocus="true" required>
-                <label for="cpf">CPF do Cliente:</label>
-              </div>
-            </form>
+    <table class="bordered highlight responsive-table">
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>CPF</td>
+          <td>Email</td>
+          <td>Telefone</td>
+          <td>CNH</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rodrigo Patrão Viveiros</td>
+          <td>26576010818</td>
+          <td>rodrigo.viveiros@outlook.com</td>
+          <td>13981316609</td>
+          <td>12345678901</td>
+          <td class="center-align">
+            <a class="btn btn-floating waves-effect waves-light green darken-3" href="#edit_modal">
+              <i class="material-icons">create</i>
+            </a>
+            <a class="btn btn-floating waves-effect waves-light red darken-3" href="#edit_modal">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="edit_modal" class="modal">
+    <div class="modal-content">
+      <h4>Editar Cliente</h4>
+      <form action="/clients" method="put">
+        <div class="row">
+          <div class="input-field col s12 m12 l6">
+            <input type="text" name="nome">
           </div>
-          <div class="row">
-            <form id="clients_form">
-              <div class="input-field col s12">
-                <input type="text" name="name" value="Rodrigo Patrão Viveiros" disabled required>
-                <label for="name">Nome:</label>
-              </div>
-              <div class="input-field col s12 m6 l6">
-                <input type="text" name="cnh" value="22222222222" disabled required>
-                <label for="cnh">CNH:</label>
-              </div>
-              <div class="input-field col s12 m6 l6">
-                <input type="text" name="phone" value="(13)98131-6609" disabled required>
-                <label for="phone">Telefone:</label>
-              </div>
-              <div class="input-field col s12 m12 l12">
-                <input type="email" name="email" value="rodrigo.viveiros@outlook.com" disabled required>
-                <label for="email">Email:</label>
-              </div>
-              <div class="input-field col s12 m12 l12 center-align">
-                <button type="button" id="form_enable" class="btn btn-small waves-effect green darken-3">Editar</button>
-                <button type="button" id="update_user" disabled class="btn btn-small waves-effect orange darken-3">Gravar</button>
-                <button type="button" id="delete_user" disabled class="btn btn-small waves-effect red darken-3">Excluir</button>
-              </div>
-            </form>
+          <div class="input-field col s12 m12 l6">
+            <input type="text" name="email">
           </div>
-          <legend>Buscar Cliente</legend>
-        </fieldset>
-      </div>
-      <div class="divider hide-on-med-and-up"></div>
-      <div class="col s12 m4 l4 hoverable">
-        <fieldset>
-          <div class="row">
-            <table>
-              <thead>
-                <tr>
-                  <td>Data</td>
-                  <td>Dias</td>
-                  <td>Valor</td>
-                </tr>
-              </thead>
-              <tbody>
-
-              </tbody>
-            </table>
+          <div class="input-field col s12 m12 l6">
+            <input type="text" name="telefone">
           </div>
-          <legend>Últimas locações</legend>
-        </fieldset>
-      </div>
-      <div class="divider hide-on-med-and-up"></div>
-      <div class="col s12 m4 l4 hoverable">
-        <fieldset>
-          <div class="row">
-            <p>Marca: Lada</p>
-            <p>Modelo: Niva</p>
-            <p>Placa: ABC1234</p>
-            <p>Ano: 1985</p>
-            <p>Cor: Verde</p>
-            <p>Diária: R$ 15,00<left/p>
-            </div>
-            <legend>Avtomobil utilizado</legend>
-          </fieldset>
+          <div class="input-field col s6 m6 l3 center-align">
+            <button type="submit" class="btn btn-small waves-effect waves-light orange darken-3">Gravar</button>
+          </div>
+          <div class="input-field col s6 m6 l3 center-align">
+            <button type="reset" class="btn btn-small waves-effect waves-light red darken-3">Limpar</button>
+          </div>
         </div>
-      </main>
+      </form>
     </div>
-    <% include partials/footer %>
-  </body>
-  <script src="/materialize/js/jquery-3.1.1.js"></script>
-  <script src="/materialize/js/materialize.js"></script>
-  <script>
-  $(function(){
-    $(".button-collapse").sideNav();
-    $("#form_enable").click(function(){
-      $(":input[type='text']").attr('disabled', function(_, attr){ return !attr});
-      $(":input[type='email']").attr('disabled', function(_, attr){ return !attr});
-      $("#update_user").attr('disabled', function(_, attr){ return !attr});
-      $("#delete_user").attr('disabled', function(_, attr){ return !attr});
-      $("#name").focus();
-    });
-  });
-  </script>
-  </html>
+  </div>
+  </main>
+  <% include partials/footer %>
+</body>
+<script src="/materialize/js/jquery-3.1.1.js"></script>
+<script src="/materialize/js/materialize.js"></script>
+<script>
+$(function(){
+  $(".button-collapse").sideNav();
+  $(".dropdown-button").dropdown();
+  $('.modal').modal();
+});
+</script>
+</html>

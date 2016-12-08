@@ -1,0 +1,42 @@
+Valores:
+
+Administrador
+    login
+    senha
+    token  (esse vem do banco)
+
+Cliente
+    nome
+    cpf
+    email
+    telefone
+    cnh
+
+Locacao
+    clienteId
+    veiculoId
+    dataInicio
+    valorTotal
+
+Veiculo
+    marca
+    modelo
+    placa
+    cor
+    ano
+    valorLocacao
+
+Manutencao
+    veiculoId
+    tipoId
+    responsavelId
+    data
+    valorLocacao
+
+Tipo
+    tipo
+
+Responsavel
+    nome
+    telefone
+    email

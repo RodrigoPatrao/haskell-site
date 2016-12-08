@@ -1,0 +1,33 @@
+Rotas:
+
+LOGIN
+/login - POST
+
+CLIENTES
+/clients        - GET   (Listagem Geral)        - aciona ao clicar em Clientes na nav principal
+/client         - PUT   (Editar)
+/client/new     - POST  (Novo Cliente)
+/client/delete  - POST  (Deletar Cliente (id))  - aciona ao clicar em Excluir no fieldset Dados dos Clientes
+
+LOCAÇÕES
+/rentals - GET (Listagem Geral)
+/rental/new - POST (Nova Locação)
+/rental/delete - POST (Deletar Locação (id))
+
+AVTOMOBILS
+/vehicles - GET (Listagem Geral)
+/vehicle/new - POST (Novo Avtomobil)
+/vehicle/delete - POST (Deletar Veículo (id))
+
+MANUTENÇÕES
+/maintenances - GET (Listagem Geral)
+/maintenance/new - POST (Nova Manutenção)
+/maintenance/delete - POST (Deletar Manutenção (id))
+
+TIPO
+/maintenance-type - GET (Listagem Geral)
+
+RESPONSÁVEL
+/responsibles - GET (Listagem Geral)
+/responsible/new - POST (Novo Responsável)
+/responsible/delete - POST (Deletar Responsável)
