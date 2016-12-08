@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head %>
+<body>
+  <header>
+    <% include partials/navbar %>
+  </header>
+  <main>
+    <h5 class="center-align">Novo Cliente</h5>
+    <div class="divider"></div>
+    <div class="container hoverable">
+      <fieldset>
+        <form action="client/new" method="post">
+          <div class="row">
+            <div class="input-field col s12 m4 l4">
+              <input type="text" name="cpf" autofocus="true" autocomplete="off" required>
+              <label for="cpf">CPF</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              <input type="text" name="nome" required>
+              <label for="nome">Nome</label>
+            </div>
+            <div class="input-field col s12 m6 l6">
+              <input type="text" name="email" required>
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m4 l4">
+              <input type="text" name="telefone" required>
+              <label for="telefone">Telefone</label>
+            </div>
+            <div class="input-field col s12 m4 l4">
+              <input type="text" name="cnh" required>
+              <label for="cnh">CNH</label>
+            </div>
+            <div class="input-field col s6 m2 l2 center-align">
+              <button type="submit" class="btn btn-small waves-effect waves-light orange darken-3">Gravar</button>
+            </div>
+            <div class="input-field col s6 m2 l2 center-align">
+              <button type="reset" class="btn btn-small waves-effect waves-light red darken-3">Limpar</button>
+            </div>
+          </div>
+        </form>
+        <legend>Dados do Novo Cliente</legend>
+      </fieldset>
+    </div>
+  </main>
+  <% include partials/footer %>
+</body>
+<script src="/materialize/js/jquery-3.1.1.js"></script>
+<script src="/materialize/js/materialize.js"></script>
+<script>
+$(function(){
+  $(".button-collapse").sideNav();
+  $(".dropdown-button").dropdown();
+});
+</script>
+</html>

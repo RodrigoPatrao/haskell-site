@@ -18,8 +18,6 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 app.locals.currentUser = '';
 app.locals.unauthorizedAccess = 'Acesso não autorizado pelo Estado. Faça seu login, camarada.';
-app.locals.success = 'Operação efetuada com sucesso.';
-app.locals.failure = 'Erro ao processar a operação.';
 
 app.use(require('./routes/index'));
 app.use(require('./routes/clients'));

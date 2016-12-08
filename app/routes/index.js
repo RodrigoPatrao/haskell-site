@@ -6,14 +6,14 @@ router.get('/', function(req, res){
   if (!req.app.locals.currentUser) {
     res.render('index', { alert : false });
   } else {
-    res.redirect('/clients');
+    res.render('index');
   }
 });
 
 router.post('/', function(req, res){
   if (!req.app.locals.currentUser) {
     req.app.locals.currentUser = req.body.login;
-    res.redirect('/clients');
+    res.redirect('/rental/new');
   }
 });
 

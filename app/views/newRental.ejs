@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head %>
+<body>
+  <header>
+    <% include partials/navbar %>
+  </header>
+  <main>
+    <h5 class="center-align">Nova Locação</h5>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12 m4 l4 hoverable">
+        <fieldset>
+          <form  action="clients" method="post">
+            <div class="input-field">
+              <input placeholder="digite o CPF e tecle ENTER" type="text" name="cpf" id="cpf" autofocus="true" required>
+              <label for="cpf">CPF do Cliente:</label>
+            </div>
+          </form>
+          <div class="row">
+            <p>Nome: Rodrigo Patrão Viveiros</p>
+            <p>CNH: 22222222222</p>
+            <p>Telefone: (13)98131-6609</p>
+            <p>Email: rodrigo.viveiros@outlook.com</p>
+          </div>
+          <legend>Dados do cliente</legend>
+        </fieldset>
+      </div>
+      <div class="divider hide-on-med-and-up"></div>
+      <div class="col s12 m4 l4 hoverable">
+        <fieldset>
+          <form  action="vehicles" method="post">
+            <select class="icons">
+              <option value="" disabled selected>escolha...</option>
+              <optgroup label="Laika">
+                <option value="" data-icon="images/lada-laika-01.jpg" class="circle"> Laika 01</option>
+                <option value="" data-icon="images/lada-laika-02.jpeg" class="circle">Laika 02</option>
+              </optgroup>
+              <optgroup label="Niva">
+                <option value="" data-icon="images/lada-niva-01.jpg" class="circle">Niva 01</option>
+                <option value="" data-icon="images/lada-niva-02.jpg" class="circle">Niva 02</option>
+              </optgroup>
+            </select>
+          </form>
+          <div class="row">
+            <p class="col s12 m6 l6">Marca:<br> Lada</p>
+            <p class="col s12 m6 l6">Modelo:<br> Niva</p>
+            <p class="col s12 m6 l6">Placa:<br> ABC1234</p>
+            <p class="col s12 m6 l6">Ano:<br> 1985</p>
+            <p class="col s12 m6 l6">Cor:<br> Verde</p>
+            <p class="col s12 m6 l6">Diária:<br> R$ 15,00</p>
+          </div>
+          <legend>Dados do Avtomobil</legend>
+        </fieldset>
+      </div>
+      <div class="divider hide-on-med-and-up"></div>
+      <div class="col s12 m4 l4 hoverable">
+        <fieldset>
+          <div class="row">
+            <form action="rentals/new" method="post">
+              <div class="input-field col s12 m6 l6">
+                <input type="date" id="data_inicio" name="data_inicio" class="datepicker">
+                <label for="data_inicio">Início:</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="date" id="data_fim" name="data_fim" class="datepicker">
+                <label for="data_fim">Final:</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="text" name="total_dias" disabled>
+                <label for="valor_total">Dias:</label>
+              </div>
+              <div class="input-field col s12 m6 l6">
+                <input type="text" name="valor_total" disabled>
+                <label for="valor_total">Valor Total:</label>
+              </div>
+              <div class="input-field col s12 center-align">
+                <button type="submit" class="btn btn-small waves-effect orange darken-3">Gravar</button>
+                <button type="reset" class="btn btn-small waves-effect red darken-3">Limpar</button>
+              </div>
+            </form>
+
+          </div>
+          <legend>Dados da Locação</legend>
+        </fieldset>
+      </div>
+    </div>
+  </main>
+</div>
+<% include partials/footer %>
+</body>
+<script src="/materialize/js/jquery-3.1.1.js"></script>
+<script src="/materialize/js/materialize.js"></script>
+<script>
+$(function(){
+  $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 15
+  });
+  $('select').material_select();
+  $(".button-collapse").sideNav();
+  $("#form_enable").click(function(){
+    $("input[disabled]").removeAttr("disabled");
+    $("button[disabled]").removeAttr("disabled");
+    $("#name").focus();
+  });
+  $("#cpf").focus(function(){
+    $("input").each(function(){
+      $(this).attr("disabled");
+    });
+    $("#edit_user").attr("disabled");
+  });
+});
+</script>
+</html>

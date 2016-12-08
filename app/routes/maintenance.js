@@ -1,13 +1,21 @@
 var express = require('express');
 var router = express.Router();
+var bodyparser = require('body-parser');
 
-router.get('/maintenance', function(req, res, next){
+router.get('/maintenances', function(req, res, next){
   if (!req.app.locals.currentUser) {
     res.render('index', { alert: true, text : req.app.locals.unauthorizedAccess  });
   } else {
-    res.render('maintenance', { alert: false });
+    res.render('maintenances');
   }
 });
 
+router.get('/maintenance/new', function(req, res, next){
+  if (!req.app.locals.currentUser) {
+    res.render('index', { alert: true, text : req.app.locals.unauthorizedAccess  });
+  } else {
+    res.render('newMaintenance');
+  }
+});
 
 module.exports = router;
