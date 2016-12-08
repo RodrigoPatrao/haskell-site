@@ -24,6 +24,7 @@ app.use(require('./routes/clients'));
 app.use(require('./routes/rentals'));
 app.use(require('./routes/vehicles'));
 app.use(require('./routes/maintenance'));
+app.use(require('./routes/ending'));
 
 app.use(function(req, res){
   res.status(404);
