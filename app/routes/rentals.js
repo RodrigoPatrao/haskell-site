@@ -15,6 +15,7 @@ router.get('/rental/new', function(req, res){
     res.render('index', { alert: true, text : req.app.locals.unauthorizedAccess });
   } else {
     res.render('newRental');
+    console.log(req.app.locals.currentUser);
   }
 });
 
