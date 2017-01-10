@@ -10,6 +10,7 @@ por outros integrantes do grupo.
 - rode os seguintes comandos em um terminal na pasta do app;
  - npm install;
  - npm start.
+ 
 O app estará rodando em <http://localhost:4000>
 
 Na conclusão, não foi possível efetuar a conexão com o webservice Haskell devido ao mesmo não ficar pronto em tempo hábil
